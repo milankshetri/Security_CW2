@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+</head>
+<body  >
+
+
+    <h1>Floral Product</h1>
+    <div class="content" style="background-image: url(//static/images/sale.jpeg);" >
+    <section>
+      <div class="register-wrapper">
+      <div class="register-block">
+      <h3 class="register-title">Buy Now</h3>
+        <p>Please check the correct details to buy your products</p>
+        <form action="/addtocart/{{productss.product_id}}" method="POST">
+
+
+          {% csrf_token %}
+
+        
+        <label for="fname">Product Id</label><br>
+        <input type="text" name="product_name" value="{{productss.product_id}}" placeholder="Prodct Name"/>
+
+        <label for="fname">Your Name</label><br>
+        <input type="text" name="your_name" placeholder="Your Name"/>
+
+        <label for="fname">Email_Address</label><br>
+        <input type="text" name="address" placeholder="Prodct Name"/>
+
+        <label for="fname">Phone Number</label><br>
+        <input type="text" name="phone_number" placeholder="Prodct Name"/>
+
+        <label for="fname">Date</label><br>
+        <input type="date" name="date" placeholder="Prodct Name"/>
+
+        <label for="fname">Location</label><br>
+        <input type="text" name="location" placeholder="Prodct Name"/>
+
+
+
+
+    
+
+              <input type="submit" value="Submit"/>
+  
+        </form>
+      </div>
+      </div>
+    </section>
+  </div>
+
+</form>
+
+
+
+</body>
+</html>
+{% endblock %}

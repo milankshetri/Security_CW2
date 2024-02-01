@@ -1,0 +1,19 @@
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: added to cart
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: Logged in
+User: <bound method AbstractBaseUser.get_username of <User: Milan>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: milan>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: milankshetri>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: admin>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: Rubin>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: abcd>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: sachin>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: Sachin>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: Sachin>> | Activity: User Logged out
+User: <bound method AbstractBaseUser.get_username of <User: sanjip>> | Activity: User sign up
+User: <bound method AbstractBaseUser.get_username of <User: test>> | Activity: User sign up

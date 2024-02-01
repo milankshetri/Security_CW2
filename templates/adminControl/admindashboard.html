@@ -1,0 +1,98 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="card col-lg-4 col-md-4 col-12" style="background-color: aliceblue;">
+      <img src="" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Total customer</h5>
+        <p class="card-text">{{usercount}}</p>
+        <a href="view-customer" class="btn btn-primary " style="background-color: pink;">Customer List</a>
+      </div>
+    </div>
+    <div class="card col-xs-6 col-sm-3" style="background-color: aliceblue;">
+      <img src="" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title"> Total Product</h5>
+        <p class="card-text">{{productcount}}</p>
+        <a href="admin-products" class="btn btn-primary"  style="background-color: pink;" >Product List</a>
+      </div>
+    </div>
+    <div class="card col-lg-4 col-md-4 col-12" style="background-color: aliceblue;">
+      <img src="" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Total Booking</h5>
+        <p class="card-text">{{bookcount}}</p>
+        <a href="admin-view-booking" class="btn btn-primary"  style="background-color: pink;">Booking list</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+<section>
+    <body>
+        <div class="market-updates">
+          <div class="col-md-4 market-update-gd">
+            <div class="market-update-block clr-block-1">
+              <div class="col-md-8 market-update-left">
+                <h3>{{usercount}}</h3>
+                <h4>Total Customer</h4>
+      
+              </div>
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-user-o"></i>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="col-md-4 market-update-gd">
+            <div class="market-update-block clr-block-2">
+              <div class="col-md-8 market-update-left">
+                <h3>{{productcount}}</h3>
+                <h4>Total Product</h4>
+      
+              </div>
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-shopping-basket"></i>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="col-md-4 market-update-gd">
+            <div class="market-update-block clr-block-3">
+              <div class="col-md-8 market-update-left">
+                
+                <h4>Total Orders</h4>
+      
+              </div>
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-bar-chart"> </i>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+      
+        </div>
+        <br><br>
+      </body>
+</section> -->
+
+{% endblock %}

@@ -1,0 +1,125 @@
+
+
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+
+    .float{
+	position:fixed;
+	width:70px;
+	height:70px;
+	bottom:60px;
+	right:60px;
+	background-color:red;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 3px 3px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+  </style>
+</head>
+
+
+<div class="container">
+  <div class=""  style="background-color: azure;">
+    <div class="panel-heading">
+      <h6 class="panel-title">Total Blog List</h6>
+    </div>
+    <table class="table table-hover" id="dev-table">
+      <thead>
+        <tr  style="background-color: paleturquoise;">
+          <th>Blog Title</th>
+          <th> Blog Image</th>
+          
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {% for bg in blogs %}
+      {% if bg %}
+      <tr style="background-color: aliceblue;">
+        <td>{{ bg.blog_name }}</td>
+        <td><img style="height: 50px; width: auto;" src="{{ bg.blog_image.url }}" alt=""></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'update-blog' bg.blog_id  %}"><span class="glyphicon glyphicon-edit"> Update</span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-blogs' bg.blog_id  %}"><span class="glyphicon glyphicon-trash"> Delete</span></a></td>
+      </tr>
+      {% else %}
+     
+
+      <!-- <br><br><br>
+      <h1>no products</h1> -->
+
+      {% endif %}
+      {% endfor %}
+      
+    </table>
+
+    <!-- PAGINATION STARTS -->
+    <nav aria-label="..." class="container pt-5">
+      {% if blogs.has_other_pages %}
+      <ul class="pagination">
+          {% if blogs.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ users.previous_page_number }}"><i
+                      class="fas fa-angle-left"></i></a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+              <a class="page-link"><i class="fas fa-angle-left"></i></a>
+          </li>
+          {% endif %}
+
+          {% for i in blogs.paginator.page_range %}
+          {% if users.number == i %}
+          <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+          {% endif %}
+          {% endfor %}
+
+          {% if blogs.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ users.next_page_number }}"><i
+                      class="fas fa-angle-right"></i></a>
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+              <a class="page-link"><i class="fas fa-angle-right"></i></a>
+          </li>
+          {% endif %}
+      </ul>
+      {% endif %}
+  </nav>
+  <!-- PAGINATION ENDS -->
+  </div>
+</div>
+<!-- add product floating button -->
+<a href="/blogform" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
+
+
+{% endblock content %}

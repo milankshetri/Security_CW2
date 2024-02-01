@@ -1,0 +1,36 @@
+{% load static %}
+<!-- header section starts  -->
+<header>
+
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo">flower <span>.</span> </a>
+
+    <nav class="navbar">
+        <a href="{%  url 'home' %}">Home</a>
+        <!-- <a href="{% url 'about' %}">About</a> -->
+        <a href="{% url 'product' %}">Products</a>
+        <a href="{% url 'blog' %}"> Blogs</a>
+        <a href="{% url 'contact' %}">Contact Us</a>
+        
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'profile' %}">My Profile </a>
+        <a href="{% url 'cart' %}" class="fas fa-shopping-cart"></a>
+        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-out"><i class="fa fa-sign-out"></i>{{request.user.username}} Logout</a>
+        <form id="logout" action="{% url 'logout' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden">
+        </form>
+        
+        {% else %}
+        <a href="{% url 'login' %}" class="fas fa-user">Login</a>
+        {% endif %}
+    </nav>
+
+    <!-- <div class="icons"> -->
+    <!-- <a href="#" class="fas fa-heart"></a> -->
+
+
+    <!-- </div> -->
+</header>

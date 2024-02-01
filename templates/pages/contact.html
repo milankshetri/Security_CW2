@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<body>
+   
+    <section class="contact">
+        {% if message_name %}
+        <section class="finally">
+        <h2 style="text-align: center;">
+            Thanks {{ message_name}}!
+        </h2>
+    
+        <p style="text-align: center;">
+            we received your email and will respond shortly...
+        </p>
+        </section>
+    {% else %}
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>
+                Feel Free to contact Us. We will be always
+                there for you.
+            </p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+
+                   
+                    <div class="text">
+                        <h3> Address</h3>
+                        <p> 44600 Kathmandu <br> Nepal</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+
+                    </div>
+                    <div class="text">
+                        <h3> Phone</h3>
+                        <p> 123456789</p>
+                    </div>
+                </div>
+
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+
+                    </div>
+                    <div class="text">
+                        <h3> Email</h3>
+                        <p> flowershop@gmail.com</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="contactForm">
+                <form method="POST" enctype="multipart/form-data" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <h2>
+                        Send Message
+                    </h2>
+                    <div class="inputBox">
+                        <input type="text" name="message_name" required="required">
+                        <span> Full Name</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="message_email" required="required">
+                        <span> Email</span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="message" required="required">
+                        <span> Your Message </span>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+
+            </div>
+        
+      </div>
+
+
+    </section>
+</body>
+
+{% endif %}
+
+{% endblock %}

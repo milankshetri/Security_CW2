@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+
+<body>
+
+
+  <div class="main">
+    <input type="checkbox" id="chk">
+    <div class="signup">
+        {% include 'includes/messages.html' %}
+        <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data" >
+
+          {% csrf_token%}
+          <label for="chk" class="sig">Sign up</label>
+
+          <div class="user-box">
+            <input type="text" value="" name="username" title="Enter Username" required>
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="email" name="email" title="Enter email" required>
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" title="Enter password" required>
+            <label>Password</label>
+          </div>
+
+          <button type="submit">Sign up</button>
+          <a href="{%  url 'login' %}">Login </a>
+        </form>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

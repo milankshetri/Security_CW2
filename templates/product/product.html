@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<section class="products" id="products" style="margin-top: 100px;">
+    <h1 class="heading"> latest <span> products</span></h1>
+
+    <div class="box-container">
+
+        {% for pr in products %}
+        <form action="{% url 'add-to-cart' pr.id  %}" method="POST">
+            {% csrf_token %}
+            <div class="box">
+                <span class="discount"> Category1</span>
+                <div class="image">
+                    <img src="{{ pr.product_image.url}}">
+
+                    <div class="icons">
+                        <!-- <i class="fas fa-heart"></i> -->
+                        <button type="submit" class="cart-btn">Add to cart</button>
+                        <!-- <a href="" class="cart-btn"> Add to cart</a> -->
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>{{ pr.name }}</h3>
+                    <div class="price">Rs {{ pr.price}} </div>
+                </div>
+
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

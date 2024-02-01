@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    :root {
+  --primary: #efeada;
+  --secondary: lightblue;
+  --dark: #607d8b;
+  --light: #f7f7f7;
+  --shadow: 1px 0px 5px darkgray;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary);
+}
+.section {
+  padding: 70px 30px;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  grid-gap: 15px 15px;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 70px;
+  margin-top: 100px;
+}
+
+.grid-row .grid-item span {
+  padding: 10px;
+  line-height: 1;
+}
+.title {
+  padding: 10px;
+}
+
+.title a{
+    padding: 10px;
+    padding-bottom: 10px;
+    background-color: skyblue;
+}
+.grid-row .grid-item h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+  height: 50px;
+}
+.grid-row .grid-item:hover {
+  filter: contrast(0.7);
+}
+.grid-row .grid-item {
+  transition: filter 0.5s ease;
+  display: flex;
+  cursor: pointer;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  color: var(--dark);
+  text-align: center;
+  font-family: sans-serif;
+  flex-direction: column-reverse;
+  align-items: stretch;
+}
+
+</style>    
+
+    <div class="section">
+      
+     
+        <div class="container">
+          
+          {% for blog in blogs %} 
+          <div class="grid-row"> 
+            
+            <div class="grid-item">
+             
+              <div class="title">
+               
+                <h3>{{blog.blog_name}}</h3>
+                <a href="{% url 'blog_detail' blog.blog_id %}">Read More</a>
+              </div>
+              <img src="{{blog.blog_image}}" />
+             
+            </div>
+
+          
+          </div>
+          {% endfor %}
+         
+        </div>
+    
+      
+      </div>
+    
+{% endblock %}

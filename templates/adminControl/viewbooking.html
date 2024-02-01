@@ -1,0 +1,35 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<section style="margin-top: 200px;">
+    <h1 style="color:#ccdbfd">Booked Items</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>price</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for od in order%}
+            <tr>
+                
+                <td>{{od.your_name}}</td>
+                <td>{{od.address}}</td>
+                <td>{{od.date}}</td>
+                <td>{{od.phone_number}}</td>
+                <td>{{od.location}}</td>
+                
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}

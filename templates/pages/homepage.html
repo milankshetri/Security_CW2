@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!-- Content Over here -->
+
+<section class="home" id="home">
+    <div class="content">
+<!-- <img src="{% static '/Images/check.jpg' %}" alt=""> -->
+
+        <h3> Fresh FLowers</h3>
+        <span> natural and beatiful flowers</span>
+
+        <p>This is the website for flowershop. This is done by using HTML and css using media query.
+            hope you guys enjoy surfying this website. Well warm and wishes
+        </p>
+
+        <a href="{% url 'product' %}" class="btn"> Shop now</a>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span> About Us</span></h1>
+
+    <div class="row">
+
+        <div class="video-container">
+            <video src="/static/Images/about-vid.mp4" loop autoplay muted></video>
+            <h3> best flower sellers</h3>
+        </div>
+
+        <div class="content">
+            <h3> Why choose Us?</h3>
+            <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to
+                think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences
+                that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.
+            </p>
+
+            <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to
+                think about paragraphs in terms of thematic unity:
+            </p>
+
+            
+        </div>
+</section>
+
+<!-- about us section ends  -->
+
+<!-- --------icons section starts-------  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <img src="/static/Images/icon-1.png" alt="">
+        <div class="info">
+            <h3>Free delivery</h3>
+            <span> on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="/static/Images/icon-2.png" alt="">
+        <div class="info">
+            <h3>10 days return</h3>
+            <span> money back guarantee</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="/static/Images/icon-3.png" alt="">
+        <div class="info">
+            <h3>offers and gifts</h3>
+            <span> on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="/static/Images/icon-4.png" alt="">
+        <div class="info">
+            <h3>secure payment</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+    </div>
+
+
+</section>
+<!-- icons section ends----- -->
+
+
+<!-- ------product section starts------- -->
+
+<section class="products" id="products">
+    <h1 class="heading"> Features <span> products</span></h1>
+
+    <div class="box-container">
+        <div class="box">
+            <span class="discount"> -10%</span>
+            <div class="image">
+                <img src="/static/images/f1.jpg">
+
+                <div class="icons">
+                    <!-- <a class="fas fa-heart"></a> -->
+                    <a href="{% url 'product' %}" class="cart-btn"> Buy Now</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <h3> Flower Pot</h3>
+                <div class="price"> $12.4</div>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <span class="discount"> -5%</span>
+            <div class="image">
+                <img src="/static/images/f2.jpg">
+                <div class="icons">
+                    <!-- <a class="fas fa-heart"></a> -->
+                    <a href="{% url 'product' %}" class="cart-btn"> Buy Now</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <h3> Flower Pot</h3>
+                <div class="price"> $12.4</div>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <span class="discount"> -10%</span>
+            <div class="image">
+                <img src="/static/images/f3.jpg">
+                <div class="icons">
+                    <!-- <a class="fas fa-heart"></a> -->
+                    <a href="{% url 'product' %}" class="cart-btn"> Buy Now</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <h3> Flower Pot</h3>
+                <div class="price"> $12.4</div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
+<!-- -----------product section ends -----------  -->
+
+
+<!-- review section starts --  -->
+
+<section id="banner">
+    <div class="container">
+        <!-- <h4>MID SEASON'S SALE</h4> -->
+        <h1>Autumn Collection<br>UP TO 25% OFF</h1>
+        <a href="{% url 'product' %}" class="btn">Shop Now</a>
+
+    </div>
+</section>
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- review section ends --------  -->
+
+
+{% endblock %}
